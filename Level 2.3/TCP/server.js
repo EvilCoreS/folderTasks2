@@ -16,11 +16,9 @@ server.on('connection', (socket) => {
 
     socket.on('error', (error) => {
         console.log(`${error} - ${new Date()}`)
+        console.log(`Closed connection with ${socket.remoteAddress}:${socket.remotePort} - ${new Date().toISOString()}`)
     })
 
-    socket.on(`close`, () => {
-        console.log(`Closing connection with ${socket.remoteAddress}:${socket.remotePort} - ${new Date()}`)
-    })
 
 })
 
